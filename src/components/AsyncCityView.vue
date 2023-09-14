@@ -55,7 +55,7 @@
         " alt="" />
       <img v-if=" weatherData.current.weather[ 0 ].icon === '10d' " class="w-[150px] h-auto" :src=" `http://openweathermap.org/img/wn/10d@2x.png`
         " alt="" />
-      <img v-if=" weatherData.current.weather[ 0 ].icon === '01n' " class="w-[150px] h-auto" :src=" `/icons8-moon-96.png`
+      <img v-if=" weatherData.current.weather[ 0 ].icon === '01n' " class="w-[150px] h-auto" :src=" `/moon.png`
         " alt="" />
 
     </div>
@@ -101,7 +101,7 @@
               :src=" `http://openweathermap.org/img/wn/10d@2x.png`
                 " alt="" />
             <img v-if=" hourData.weather[ 0 ].icon === '01n' " class="w-auto h-[50px] object-cover"
-              :src=" `/public/icons8-moon-96.png`
+              :src=" `/moon.png`
                 " alt="" />
             <p class="text-xl">
               {{ Math.round( ( hourData.temp - 32 ) * 5 / 9 ) }}&deg;
@@ -143,7 +143,7 @@
             " alt="" />
           <img v-if=" day.weather[ 0 ].icon === '10d' " class="w-[50px] h-[50px] object-cover" :src=" `http://openweathermap.org/img/wn/10d@2x.png`
             " alt="" />
-          <img v-if=" day.weather[ 0 ].icon === '01n' " class="w-[50px] h-[50px] object-cover" :src=" `/public/icons8-moon-96.png`
+          <img v-if=" day.weather[ 0 ].icon === '01n' " class="w-[50px] h-[50px] object-cover" :src=" `/public/moon.png`
             " alt="" />
           <div class="flex gap-8 flex-1 justify-end ">
             <p>H: {{ Math.round( ( day.temp.max - 32 ) * 5 / 9 ) }}</p>
