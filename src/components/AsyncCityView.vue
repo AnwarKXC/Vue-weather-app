@@ -67,7 +67,7 @@
       <div class="mx-8 text-white">
         <h2 class="mb-4">Hourly Weather</h2>
         <div class="flex gap-10 overflow-x-scroll">
-          <div v-for="   hourData    in    weatherData.hourly   " :key=" hourData.dt "
+          <div v-for="    hourData     in     weatherData.hourly    " :key=" hourData.dt "
             class="flex flex-col gap-4 items-center">
             <p class="whitespace-nowrap text-md">
               {{
@@ -117,7 +117,7 @@
     <div class="max-w-screen-md w-full py-12">
       <div class="mx-8 text-white">
         <h2 class="mb-4">7 Day Forecast</h2>
-        <div v-for="   day    in    weatherData.daily   " :key=" day.dt " class="flex items-center">
+        <div v-for="    day     in     weatherData.daily    " :key=" day.dt " class="flex items-center">
           <p class="flex-1">
             {{
               new Date( day.dt * 1000 ).toLocaleDateString(
@@ -165,12 +165,12 @@
 <script setup>
 import axios from "axios"
 import { useRoute, useRouter } from "vue-router"
-
 const route = useRoute()
 const getWeatherData = async () => {
+  let api = await import.meta.env.VITE_API_KEY
   try {
     const weatherData = await axios.get(
-      `https://api.openweathermap.org/data/2.5/onecall?lat=${ route.query.lat }&lon=${ route.query.lng }&exclude={part}&appid=7efa332cf48aeb9d2d391a51027f1a71&units=imperial`
+      `https://api.openweathermap.org/data/2.5/onecall?lat=${ route.query.lat }&lon=${ route.query.lng }&exclude={part}&appid=${ api }&units=imperial`
     )
 
     // cal current date & time
